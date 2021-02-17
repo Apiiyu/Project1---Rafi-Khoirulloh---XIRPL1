@@ -5,15 +5,27 @@ public class Menu {
     private double harga;
     private  String kategori;
 
-    public String getNamaMenu() { return ""; }
+    public String getNamaMenu() {
+        return namaMenu;
+    }
 
-    public void setNamaMenu(String namaMenu) {}
+    public void setNamaMenu(String namaMenu) {
+        this.namaMenu = namaMenu;
+    }
 
-    public double getHarga() { return 0; }
+    public double getHarga() {
+        return harga;
+    }
 
-    void setHarga (double harga) {}
+    public void setHarga (double harga) {
+        this.harga = harga;
+    }
 
-    public String getKategori() {return ""; }
+    public String getKategori() {
+        return kategori;
+    }
 
-    public void setKategori(String kategori) {}
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
+    }
 }
