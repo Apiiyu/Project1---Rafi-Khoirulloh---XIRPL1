@@ -18,9 +18,27 @@ public class MainAplikasiKasir {
 
         MainAplikasiKasir application = new MainAplikasiKasir();
         application.generateDaftarMenu();
+
+//        Mulai Transaksi
+        System.out.println("============ TRANSAKSI ============");
+
+//        Ambil data Transaksi
+        System.out.print("No Transaksi : ");
+        noTransaksi = input.next();
+
+        System.out.print("Pemesan : ");
+        namaPemesan = input.next();
+
+        System.out.print("Tanggal : [dd-mm-yyyy] ");
+        tanggal = input.next();
+
+        System.out.print("Makan ditempat? [Y/N]");
+        makanDitempat = input.next();
+        if(makanDitempat.equalsIgnoreCase("Y")){
+            System.out.print("Nomor Meja : ");
+            noMeja = input.next();
+        }
     }
-
-
 
     public void generateDaftarMenu(){
         daftarMenu = new DaftarMenu();
@@ -52,5 +70,7 @@ public class MainAplikasiKasir {
 
         daftarMenu.tampilDaftarMenu();
     }
+
+
 
 }
