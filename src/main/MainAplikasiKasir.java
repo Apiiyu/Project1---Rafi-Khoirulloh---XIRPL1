@@ -98,6 +98,44 @@ public class MainAplikasiKasir {
                 System.out.print("Tambah Pesanan Lagi? [Y/N] : ");
                 pesanLagi = input.next();
             } while (pesanLagi.equalsIgnoreCase("Y"));
+//            Cetak Struk
+        trans.cetakStruk();
+
+//        Hitung total harga
+        double totalPesanan = trans.hitungTotalPesanan();
+        System.out.println("========================");
+        System.out.println("Total : \t\t" +totalPesanan);
+
+//        Hitung Pajak
+//        Jika makan ditempat, biaya pajak = 10% ppn + 5% service
+        trans.setPajak(PAJAK_PPN);
+        double ppn = trans.hitungPajak();
+        System.out.println("Pajak 10% : \t\t" + ppn);
+
+        double biayaService = 0;
+        if (makanDitempat.equalsIgnoreCase("Y")){
+            trans.setBiayaService(BIAYA_SERVICE);
+            biayaService = trans.hitungBiayaService();
+            System.out.println("Biaya Service 5% : \t" + biayaService);
+        }
+
+//        Tampilkan total bayar
+        System.out.println("Total : \t\t" + trans.hitungTotalBayar(ppn, biayaService));
+
+//        Cek uang bayar, apakah > total bayar atau tidak
+        double kembalian = 0;
+        do {
+            double uangBayar = application.cekInputNumber("Uang Bayar : \t\t");
+
+            kembalian = trans.hitungKembalian(uangBayar);
+            if (kembalian < 0){
+                System.out.println("[Err] Uang anda kurang");
+            } else {
+                System.out.println("Kembalian : \t\t" + kembalian);
+                break;
+            }
+        } while (kembalian < 0);
+        System.out.println("============ TERIMA KASIH ============");
     }
 
     public void generateDaftarMenu(){
