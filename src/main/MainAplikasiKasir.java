@@ -31,7 +31,7 @@ public class MainAplikasiKasir {
             System.out.print("Pemesan : ");
             namaPemesan = input.next();
 
-            System.out.print("Tanggal : [dd-mm-yyyy] ");
+            System.out.print("Tanggal : [dd-mm-yyyy] \t");
             tanggal = input.next();
 
             System.out.print("Makan ditempat? [Y/N]");
