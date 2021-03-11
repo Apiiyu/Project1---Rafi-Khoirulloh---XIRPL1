@@ -4,14 +4,23 @@ import classes.*;
 import java.util.Scanner;
 
 public class MainAplikasiKasir {
+
+    public DaftarMenu daftarMenu;
+    public static double PAJAK_PPN = 0.10;
+    public static double BIAYA_SERVICE = 0.05;
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+
+        String noTransaksi, namaPemesan, tanggal, noMeja = "";
+        String transaksiLagi = "", pesanLagi = "", keterangan = "", makanDitempat;
+        int jumlahPesanan, noMenu;
 
         MainAplikasiKasir application = new MainAplikasiKasir();
         application.generateDaftarMenu();
     }
 
-    public DaftarMenu daftarMenu;
+
 
     public void generateDaftarMenu(){
         daftarMenu = new DaftarMenu();

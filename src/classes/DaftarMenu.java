@@ -9,7 +9,7 @@ public class DaftarMenu {
         daftarMenu = new ArrayList<>();
     }
 
-    public  void tambahMenu(Menu menu){
+    public void tambahMenu(Menu menu){
         daftarMenu.add(menu);
     }
 
