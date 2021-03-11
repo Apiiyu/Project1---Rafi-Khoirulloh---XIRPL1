@@ -11,21 +11,27 @@ public class Transaksi {
     private double uangBayar;
     private double pajak;
     private double totalBayar;
+    private double biayaService = 0;
 
     public Transaksi(String noTransaksi, String namaPemesan, String tanggal, String noMeja){
+        this.noTransaksi = noTransaksi;
+        this.namaPemesan = namaPemesan;
+        this.tanggal = tanggal;
+        this.noMeja = noMeja;
 
+        pesanan = new ArrayList<>();
     }
 
     public void tambahPesanan(Pesanan pesanan){
-
+        this.pesanan.add(pesanan);
     }
-
-    public Pesanan getPesanan(){
-        return null;
-    }
+//
+//    public Pesanan getPesanan(){
+//        return null;
+//    }
 
     public ArrayList<Pesanan> getSemuaPesanan(){
-        return null;
+        return pesanan;
     }
 
     public double hitungTotalBayar() {
